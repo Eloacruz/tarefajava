@@ -85,20 +85,16 @@
             </div>
 
         </div>
-        <script>
-var quadrado = document.getElementById('quadrado');
+        <input type="radio" id="azul" onclick="document.getElementById('quadrado').style.backgroundColor='blue'">
+<label for="azul">Azul</label>
 
-// Quando clicamos no botão azul, o quadrado fica azul
-document.getElementById('azul').onclick = function() {
-  quadrado.style.backgroundColor = 'blue';
-}
+<input type="radio" id="vermelho" onclick="document.getElementById('quadrado').style.backgroundColor='red'">
+<label for="vermelho">Vermelho</label>
 
-// Quando clicamos no botão vermelho, o quadrado fica vermelho
-document.getElementById('vermelho').onclick = function() {
-  quadrado.style.backgroundColor = 'red';
-}
+<div id="quadrado" style="width:200px; height:200px; background-color:blue;"></div>
 
-</script>
+ 
+
 
     </body>
 </html>
