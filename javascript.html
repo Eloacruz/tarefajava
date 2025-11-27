@@ -1,89 +1,217 @@
 <!DOCTYPE html>
+<!-- Declara documento HTML5 -->
+
 <html lang="pt-br">
+<!-- Elemento raiz; idioma: Português do Brasil -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulação JavaScript</title>
-    <style>
-        body{
-            display: flex;
-            justify-content:space-around;
-            align-items: center;
-            background-color: burlywood;
-            flex-wrap: wrap;     
-        }
-        body h1{
-            width: 100%;
-            height: 10%;
-            text-align: center;
-        }
-        #controle{
-            width: 40%;
-            height: 300px;
-            background-color: darkgray;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        #controle p{
-            width: 100%;
-            height: 30%;
-            font-weight: 900;
-            font-size:30px;
-            text-align: center;
-        }
-        #controle div{
-            width: 100%;
-            height: 70%;
-            font-weight: 900;
-            font-size:30px;
-            text-align: justify;
-        }
-        #controle div>input{
-            margin-top: 10px;
-            margin-left: 40%;
-            width: 20px;
-            height: 20px;
-        }
-        
-        #objeto {
-            width: 30%;
-            height: 300px;
-            background-color: darkgray;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        #quadrado{
-            width: 200px;
-            height: 200px;
-            background-color: blue;
-        }
-        .center {
-            width: 50%;
-        }
-    </style>
+<!-- Cabeçalho: metadados, título e estilos -->
+
+<meta charset="UTF-8">
+<!-- Define codificação UTF-8 (suporta acentos) -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Torna a página responsiva em dispositivos móveis -->
+
+<title>Manipulação JavaScript</title>
+<!-- Título da página mostrado na aba do navegador -->
+
+<style>
+/* Início do CSS embutido */
+
+body{
+/* Seleciona o corpo da página */
+    display: flex;
+    /* Usa flexbox para posicionar os filhos */
+    justify-content:space-around;
+    /* Espaça os itens horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente ao centro */
+    background-color: burlywood;
+    /* Cor de fundo da página */
+    flex-wrap: wrap;
+    /* Permite quebra de linha dos filhos se necessário */
+}
+
+body h1{
+/* Seleciona h1 dentro do body */
+    width: 100%;
+    /* Faz o h1 ocupar toda a largura */
+    height: 10%;
+    /* Define altura relativa do h1 */
+    text-align: center;
+    /* Centraliza o texto do h1 */
+}
+
+#controle{
+/* Painel com as opções (rádios) */
+    width: 40%;
+    /* Largura do painel de controle */
+    height: 300px;
+    /* Altura fixa do painel */
+    background-color: darkgray;
+    /* Cor de fundo do painel */
+    display: flex;
+    /* Flexbox para conteúdo interno */
+    justify-content: center;
+    /* Centraliza horizontalmente conteúdo */
+    flex-wrap: wrap;
+    /* Permite quebra interna */
+}
+
+#controle p{
+/* Estilo do parágrafo dentro do controle */
+    width: 100%;
+    /* Ocupa a largura inteira do painel */
+    height: 30%;
+    /* Altura do parágrafo dentro do painel */
+    font-weight: 900;
+    /* Texto em negrito */
+    font-size:30px;
+    /* Tamanho da fonte */
+    text-align: center;
+    /* Centraliza texto */
+}
+
+#controle div{
+/* Contêiner dos inputs dentro do controle */
+    width: 100%;
+    /* Largura total do contêiner */
+    height: 70%;
+    /* Altura restante no painel */
+    font-weight: 900;
+    /* Texto em negrito para labels */
+    font-size:30px;
+    /* Tamanho da fonte para os labels */
+    text-align: justify;
+    /* Justifica o texto no contêiner */
+}
+
+#controle div>input{
+/* Estilo específico para inputs filhos diretos */
+    margin-top: 10px;
+    /* Espaçamento superior */
+    margin-left: 40%;
+    /* Empurra o input para a direita */
+    width: 20px;
+    /* Largura do input */
+    height: 20px;
+    /* Altura do input */
+}
+
+#objeto {
+/* Painel que mostra o objeto (quadrado) */
+    width: 30%;
+    /* Largura do painel do objeto */
+    height: 300px;
+    /* Altura fixa igual ao controle */
+    background-color: darkgray;
+    /* Cor de fundo do painel do objeto */
+    display: flex;
+    /* Flexbox para alinhar título e quadrado */
+    flex-direction: column;
+    /* Organiza filhos em coluna */
+    justify-content: center;
+    /* Centraliza verticalmente o conteúdo */
+    align-items: center;
+    /* Centraliza horizontalmente os filhos */
+}
+
+#quadrado{
+/* O quadrado que mudará de cor */
+    width: 200px;
+    /* Largura fixa do quadrado */
+    height: 200px;
+    /* Altura fixa para manter quadrado */
+    background-color: blue;
+    /* Cor inicial do quadrado */
+}
+
+.center {
+/* Classe utilitária para centralizar largura */
+    width: 50%;
+    /* Define largura de 50% */
+}
+
+</style>
+<!-- Fim do CSS embutido -->
+
 </head>
+
 <body>
-    <h1>Manipulação JavaScript</h1>
-    <div id="controle">
-        <p>Escolha uma opção</p>
-        <div>
-            <input type="radio" id="azul" name="cor" value="1" 
-                   onclick="document.getElementById('quadrado').style.backgroundColor='blue'; document.querySelector('#objeto h1').innerHTML='Azul'">
-            <label for="azul">Azul</label><br>
+<!-- Início do corpo visível da página -->
 
-            <input type="radio" id="vermelho" name="cor" value="2" 
-                   onclick="document.getElementById('quadrado').style.backgroundColor='red'; document.querySelector('#objeto h1').innerHTML='Vermelho'">
-            <label for="vermelho">Vermelho</label><br>
-        </div>
+<h1>Manipulação JavaScript</h1>
+<!-- Título principal exibido na página -->
+
+<div id="controle">
+<!-- Painel de controle com opções de cor -->
+    <p>Escolha uma opção</p>
+    <!-- Instrução para o usuário -->
+    <div>
+    <!-- Contêiner dos rádios -->
+        <input type="radio" id="azul" name="cor" value="1">
+        <!-- Rádio para "Azul" (id usado no JS) -->
+        <label for="azul">Azul</label><br>
+        <!-- Label ligado ao rádio azul e quebra de linha -->
+        <input type="radio" id="vermelho" name="cor" value="2">
+        <!-- Rádio para "Vermelho" (mesmo name para agrupar) -->
+        <label for="vermelho">Vermelho</label><br>
+        <!-- Label ligado ao rádio vermelho e quebra de linha -->
     </div>
+</div>
 
-    <div id="objeto">
-        <h1 class="center">Azul</h1>
-        <div id="quadrado" class="center"></div>
-    </div>  
+<div id="objeto">
+<!-- Painel que mostra o estado atual e o quadrado -->
+    <h1 id="corAtual" class="center">Azul</h1>
+    <!-- Título que exibe o nome da cor atual (id usado no JS) -->
+    <div id="quadrado" class="center">
+    <!-- Div que representa o quadrado colorido (id usado no JS) -->
+    </div>
+</div>
+
+<script>
+// Início do JavaScript
+
+// Pegando os elementos do DOM
+const azulRadio = document.getElementById('azul');
+// Referência ao input rádio "azul"
+const vermelhoRadio = document.getElementById('vermelho');
+// Referência ao input rádio "vermelho"
+const quadrado = document.getElementById('quadrado');
+// Referência à div do quadrado que será recolorada
+const corAtual = document.getElementById('corAtual');
+// Referência ao elemento que mostra o nome da cor
+
+// Função para alterar a cor do quadrado
+function mudarCor() {
+    // Verifica qual rádio está marcado e atualiza estilo e texto
+    if (azulRadio.checked) {
+        // Se azul estiver marcado...
+        quadrado.style.backgroundColor = 'blue';
+        // ...muda o fundo do quadrado para azul
+        corAtual.textContent = 'Azul';
+        // ...atualiza o texto que mostra a cor atual
+    } else if (vermelhoRadio.checked) {
+        // Se vermelho estiver marcado...
+        quadrado.style.backgroundColor = 'red';
+        // ...muda o fundo do quadrado para vermelho
+        corAtual.textContent = 'Vermelho';
+        // ...atualiza o texto que mostra a cor atual
+    }
+}
+
+// Adicionando evento de mudança nos rádios
+azulRadio.addEventListener('change', mudarCor);
+// Chama mudarCor quando o rádio azul muda de estado
+vermelhoRadio.addEventListener('change', mudarCor);
+// Chama mudarCor quando o rádio vermelho muda de estado
+
+// Inicializando a cor do quadrado
+mudarCor();
+// Executa a função ao carregar para ajustar estado inicial
+
+</script>
+
 </body>
 </html>
-
